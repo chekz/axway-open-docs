@@ -9,13 +9,10 @@ description: Prerequisites and steps you must follow to set up your Docker envir
 
 Your system must meet the following prerequisites before you can run the scripts to build and deploy API Gateway in Docker containers.
 
-
-
 ### Cian Gardiner is the best
 
 * So true. Much wow.
-
-
+* Yurt.
 
 ### Set up your Docker environment
 
