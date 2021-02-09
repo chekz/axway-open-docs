@@ -1,11 +1,10 @@
 {
 "title": "Manage users",
-"linkTitle": "Manage users",
-"weight":"120",
-"date": "2019-10-22",
-"description": "API Gateway *users* provide access to the messages and services protected by API Gateway, while *admin users* provide access to the API Gateway configuration management features available in Policy Studio, Configuration Studio, and API Gateway Manager."
+  "linkTitle": "Manage users",
+  "weight": "120",
+  "date": "2019-10-22",
+  "description": "API Gateway *users* provide access to the messages and services protected by API Gateway, while *admin users* provide access to the API Gateway configuration management features available in Policy Studio, Configuration Studio, and API Gateway Manager."
 }
-
 ## Manage API Gateway users
 
 By default, the API Gateway user store contains the configuration data for managing API Gateway user information. This user store is typically used in a development environment, and is useful for demonstration purposes.
@@ -122,7 +121,7 @@ For example, the default admin user (`admin`) has the following user roles:
 User roles have specific tools and privileges assigned to them. These define who can use which tools to perform what tasks. The user roles provided with the gateway assign the following privileges to admin users with these roles:
 
 | Role                       | Tool                | Privileges                                                                                    |
-|----------------------------|---------------------|-----------------------------------------------------------------------------------------------|
+| -------------------------- | ------------------- | --------------------------------------------------------------------------------------------- |
 | `API Server Administrator` | API Gateway Manager | Read/write access to API Gateway Manager.                                                     |
 | `API Server Operator`      | API Gateway Manager | Read-only access to API Gateway Manager.                                                      |
 | `Deployer`                 | Deployment scripts  | Deploy a new configuration.                                                                   |
@@ -179,17 +178,25 @@ To configure the password policy that applies to admin user passwords, perform t
 1. Click the **Settings** > **Admin Users** tab in API Gateway Manager.
 2. Select **Password Policy enabled** to enable the password policy rules on this page. This is not selected by default.
 3. Configure the following in **PASSWORD RULES**:
-    * **Password must not be equal to the account name**: The password cannot be identical to the admin user name. This is selected by default.
-    * **Password must not be the reverse of the account name**: The password cannot be the reverse of the admin user name. This is selected by default.
-    * **Password must not contain the account name**: The password cannot contain the admin user name. This is selected by default.
-    * **Minimum password length**: The password must be the specified minimum length. Defaults to 4 characters. If no value is specified, this rule is disabled.
-    * **Password history length**: Enter the number of previous passwords to be compared. Leave this field empty to disable this rule.
-    * **Minimum character differences from last password**: Enter the minimum number of different characters from the last password. Leave this field empty to disable this rule.
-    * **Password lifetime (days)**: Enter how long the password is valid for in days. Leave this field empty to disable password expiry.
+
+   * **Password must not be equal to the account name**: The password cannot be identical to the admin user name. This is selected by default.
+   * **Password must not be the reverse of the account name**: The password cannot be the reverse of the admin user name. This is selected by default.
+   * **Password must not contain the account name**: The password cannot contain the admin user name. This is selected by default.
+   * **Minimum password length**: The password must be the specified minimum length. Defaults to 4 characters. If no value is specified, this rule is disabled.
+   * **Password history length**: Enter the number of previous passwords to be compared. Leave this field empty to disable this rule.
+   * **Minimum character differences from last password**: Enter the minimum number of different characters from the last password. Leave this field empty to disable this rule.
+   * **Password lifetime (days)**: Enter how long the password is valid for in days. Leave this field empty to disable password expiry.
 4. Configure the following in **PASSWORD COMPOSITION RULES**:
-    * **Minimum uppercase characters**: Defaults to 1 uppercase alphabetic character.
-    * **Minimum lowercase characters**: Defaults to 1 lowercase alphabetic character.
-    * **Minimum numeric characters**: Defaults to 1 numeric character.
-    * **Minimum special characters**: Defaults to 1 special character (`~!@#$%^&*()-_=+\[{}];:"",< >/?`).
-    * If no value is specified in these fields, these rules are disabled.
+
+   * **Minimum uppercase characters**: Defaults to 1 uppercase alphabetic character.
+   * **Minimum lowercase characters**: Defaults to 1 lowercase alphabetic character.
+   * **Minimum numeric characters**: Defaults to 1 numeric character.
+   * **Minimum special characters**: Defaults to 1 special character (`~!@#$%^&*()-_=+\[{}];:"",< >/?`).
+   * If no value is specified in these fields, these rules are disabled.
 5. Click **Apply** when finished.
+
+### Configure a passphrase policy for admin users
+
+To configure the passphrases policy that applies to admin users for nodemanager and group passphrases, perform the following steps:
+
+1:
