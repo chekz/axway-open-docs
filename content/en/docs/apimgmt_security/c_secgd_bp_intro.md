@@ -1,11 +1,10 @@
 {
 "title": "Security best practices",
-"linkTitle": "Security best practices",
-"weight": 90,
-"date": "2019-11-25",
-"description": "Recommended best practices for securing API Gateway, API Manager, and API Portal."
+  "linkTitle": "Security best practices",
+  "weight": 90,
+  "date": "2019-11-25",
+  "description": "Recommended best practices for securing API Gateway, API Manager, and API Portal."
 }
-
 ## Secure connections
 
 All connections between internal components (API Gateways and Node Managers) are secured by mutual authentication.  Best practices would recommend securing all connections to external networks with mutual authentication, where that is supported by the back-end service.
@@ -49,15 +48,18 @@ In the event of a possible vulnerability discovered in the product, you must be 
 For more information on upgrade procedures, see the following sections:
 
 * API Gateway and API Manager software:
-    * [API Gateway Upgrade Guide](/docs/apim_installation/apigw_upgrade/)
-    * [Update API Gateway](/docs/apim_installation/apigtw_install/install_service_packs/)
+
+  * [API Gateway Upgrade Guide](/docs/apim_installation/apigw_upgrade/)
+  * [Update API Gateway](/docs/apim_installation/apigtw_install/install_service_packs/)
 * API Gateway and API Manager container deployment:
-    * [Upgrade a container deployment](/docs/apim_installation/apigw_containers/container_upgrade/)
-    * [Apply a patch, update, or service pack](/docs/apim_installation/apigw_containers/container_patch_sp/)
+
+  * [Upgrade a container deployment](/docs/apim_installation/apigw_containers/container_upgrade/)
+  * [Apply a patch, update, or service pack](/docs/apim_installation/apigw_containers/container_patch_sp/)
 * API Portal:
-    * [Upgrade API Portal](/docs/apim_installation/apiportal_install/upgrade_automatic/)
-    * [Upgrade API Portal docker deployment](/docs/apim_installation/apiportal_docker/upgrade_docker/)
-    * [Update API Portal with a service pack or patch](/docs/apim_installation/apiportal_install/install_service_pack/)
+
+  * [Upgrade API Portal](/docs/apim_installation/apiportal_install/upgrade_automatic/)
+  * [Upgrade API Portal docker deployment](/docs/apim_installation/apiportal_docker/upgrade_docker/)
+  * [Update API Portal with a service pack or patch](/docs/apim_installation/apiportal_install/install_service_pack/)
 
 ## Generic or anonymous users
 
@@ -67,7 +69,7 @@ In cases where multiple administrator users are responsible for configuring poli
 
 ## Password policy
 
-In line with security best practices, you can configure a password policy for administrator users in API Gateway Manager. Password policy refers to the size and complexity of the password, as well as to all the rules to manage the password.
+In line with security best practices, you can configure a password policy for administrator users in API Gateway Manager. Password policy refers to the size and complexity of the password, as well as all the rules to manage the password.
 
 It is also possible to take certain actions when a configurable number of invalid authentication attempts has occurred via HTTP basic, HTTP digest, and HTML form-based authentication.  For example, you can lock a user account or ban an IP address if a certain number of invalid passwords have been submitted to API Gateway. For details, see [Authentication filters](/docs/apim_policydev/apigw_polref/authn_common/).
 
@@ -75,6 +77,12 @@ For more information on setting the password policy for administrator users, see
 [Configure a password policy for admin users](/docs/apim_administration/apigtw_admin/manage_user_access/#configure-a-password-policy-for-admin-users).
 
 You can also configure password policies for [API Manager](/docs/apim_administration/apimgr_admin/api_mgmt_admin/#enforce-password-changes) and [API Portal](/docs/apim_administration/apiportal_admin/customize_page_content/#enforce-password-policies) users.
+
+## Passphrase policy
+
+In line with security best practices, you can configure a passphrase policy for administrator users in API Gateway Manager. Passphrase policy refers to the size and complexity of the passphrase as well as all the rules to manage the passphrase.
+
+For more information of setting the passphrase policy for administrators users, see the <ENTER LINK HERE>.
 
 ## Default authentication account
 
@@ -122,7 +130,6 @@ The files in the following directory, where `<ID>` represents the policy package
 
 ```
 /groups/<GROUP>/conf/<ID>
-
 ```
 
 As stated earlier, an encryption passphrase can be used to encrypt sensitive data in the Entity Store, including private keys, passwords, and tokens.
@@ -254,14 +261,15 @@ Upgrading API Gateway, API Manager, or API Portal can modify any file in the sy
 Outside upgrade, the following files in API Gateway and API Manager should not change, and it is recommended to monitor their integrity:
 
 * `*.so` C++ files in `INSTALL_DIR/apigateway/Linux.x86_64` and all subdirectories.
-* `gateway-oracle-em-plugin.jar` Oracle Java plugin in `INSTALL_DIR/apigateway/Linux.x86_64/system/conf/oracle-em`.       * `*.jar` Java files in the following directories and all subdirectories:
-    * `INSTALL_DIR/apigateway/Linux.x86_64y/system/lib`
-    * `INSTALL_DIR/apigateway/Linux.x86_64/jre/lib/`
-    * `INSTALL_DIR/apigateway/Linux.x86_64/lib/`
-    * `INSTALL_DIR/apigateway/Linux.x86_64/java/`
-    * `INSTALL_DIR/apigateway/Linux.x86_64/java`
-    * `INSTALL_DIR/apigateway/samples/WebServices/lib/`
-    * `INSTALL_DIR/apigateway/upgrade/legacy/7.1.x/`
+* `gateway-oracle-em-plugin.jar` Oracle Java plugin in `INSTALL_DIR/apigateway/Linux.x86_64/system/conf/oracle-em`.        *`*.jar` Java files in the following directories and all subdirectories:
+
+  * `INSTALL_DIR/apigateway/Linux.x86_64y/system/lib`
+  * `INSTALL_DIR/apigateway/Linux.x86_64/jre/lib/`
+  * `INSTALL_DIR/apigateway/Linux.x86_64/lib/`
+  * `INSTALL_DIR/apigateway/Linux.x86_64/java/`
+  * `INSTALL_DIR/apigateway/Linux.x86_64/java`
+  * `INSTALL_DIR/apigateway/samples/WebServices/lib/`
+  * `INSTALL_DIR/apigateway/upgrade/legacy/7.1.x/`
 * `*.js` Javascript files in `INSTALL_DIR/apigateway/webapps` and all subdirectories.
 * `*.*` executables in `INSTALL_DIR/apigateway/posix/bin`.
 
@@ -273,11 +281,12 @@ Outside upgrade, the following files in API Portal are modified by specific act
 
 * `configuration.php` configuration file  in `INSTALL_DIR/`: The configuration is updated manually or through Joomla! Administration Interface (JAI).
 * `default.php`, `contact.php`, `faq.php` static content files in:
-    * `INSTALL_DIR/views/documentation/tmpl/`
-    * `INSTALL_DIR/views/help/tmpl/`
-    * `INSTALL_DIR/views/pricing/tmpl/`
-    * `INSTALL_DIR/views/terms/tmpl/`
-    * `INSTALL_DIR/views/home/tmpl/`
+
+  * `INSTALL_DIR/views/documentation/tmpl/`
+  * `INSTALL_DIR/views/help/tmpl/`
+  * `INSTALL_DIR/views/pricing/tmpl/`
+  * `INSTALL_DIR/views/terms/tmpl/`
+  * `INSTALL_DIR/views/home/tmpl/`
 
     These files contain static content that can be modified.
 * `*.*` template files in `INSTALL_DIR/templates/purity_iii/local/`: New themes are created or the CSS files modified.
