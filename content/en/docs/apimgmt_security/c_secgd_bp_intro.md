@@ -73,16 +73,16 @@ In line with security best practices, you can configure a password policy for ad
 
 It is also possible to take certain actions when a configurable number of invalid authentication attempts has occurred via HTTP basic, HTTP digest, and HTML form-based authentication.  For example, you can lock a user account or ban an IP address if a certain number of invalid passwords have been submitted to API Gateway. For details, see [Authentication filters](/docs/apim_policydev/apigw_polref/authn_common/).
 
-For more information on setting the password policy for administrator users, see the
+For more information on setting the password policy for administrator users, see
 [Configure a password policy for admin users](/docs/apim_administration/apigtw_admin/manage_user_access/#configure-a-password-policy-for-admin-users).
 
 You can also configure password policies for [API Manager](/docs/apim_administration/apimgr_admin/api_mgmt_admin/#enforce-password-changes) and [API Portal](/docs/apim_administration/apiportal_admin/customize_page_content/#enforce-password-policies) users.
 
 ## Passphrase policy
 
-In line with security best practices, you can configure a passphrase policy for administrator users in API Gateway Manager. Passphrase policy refers to the size and complexity of the passphrase as well as all the rules to manage the passphrase for nodemanagers and groups.
+In line with security best practices, you can configure a passphrase policy for API Gateway Manager admin users. Passphrase policy refers to the size and complexity of the passphrase as well as all the rules to manage the passphrases for nodemanagers and groups.
 
-For more information of setting the passphrase policy for administrators users, see the [Configure a passphrase policy for admin users](https://developmar21--axway-open-docs.netlify.app/docs/apim_administration/apigtw_admin/manage_user_access/#configure-a-passphrase-policy-for-admin-users).
+For more information of setting the passphrase policy for administrators users, see [Configure a passphrase policy for admin users](https://developmar21--axway-open-docs.netlify.app/docs/apim_administration/apigtw_admin/manage_user_access/#configure-a-passphrase-policy-for-admin-users).
 
 ## Default authentication account
 
