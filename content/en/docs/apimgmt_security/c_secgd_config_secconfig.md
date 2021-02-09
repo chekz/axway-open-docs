@@ -1,11 +1,10 @@
 {
 "title": "Security configuration",
-"linkTitle": "Security configuration",
-"weight": 60,
-"date": "2019-11-25",
-"description": "Describes the main configurable security features of API Gateway, API Manager, and API Portal."
+  "linkTitle": "Security configuration",
+  "weight": 60,
+  "date": "2019-11-25",
+  "description": "Describes the main configurable security features of API Gateway, API Manager, and API Portal."
 }
-
 ## API Gateway inbound SSL configuration
 
 API Gateway supports mutual SSL connections on most inbound interfaces, such as HTTPS interfaces, SMTP services, FTP pollers, and JMS services.  Each of these interfaces allows an administrator to configure the server certificate, the list of certificates that are considered trusted to validate the client certificate, and the cipher suite to use in SSL connections.
@@ -199,6 +198,18 @@ Additionally, the following settings are available for password reset of Joomla!
 You can set the administrator's password during installation.
 
 API Portal forces a Joomla! administrator password change on first login.
+
+## Nodemanager and group passphrase policy
+
+You can configure the following rules for nodemanager and group passphrases for API Gateway administrators:
+
+* Restrictions on using account user name in passwords.
+* Restrictions on password length.
+* Restrictions on using passwords that are similar to passwords used previously.
+* How long a password is valid.
+* The minimum number of uppercase, lowercase, numeric, and special characters a password must contain.
+
+For more details, see [Configure a passphrase policy for admin users](https://developmar21--axway-open-docs.netlify.app/docs/apim_administration/apigtw_admin/manage_user_access/#configure-a-passphrase-policy-for-admin-users).
 
 ## API Gateway signing the audit trail
 
