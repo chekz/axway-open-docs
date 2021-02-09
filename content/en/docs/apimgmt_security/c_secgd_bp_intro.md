@@ -80,7 +80,7 @@ You can also configure password policies for [API Manager](/docs/apim_administra
 
 ## Passphrase policy
 
-In line with security best practices, you can configure a passphrase policy for administrator users in API Gateway Manager. Passphrase policy refers to the size and complexity of the passphrase as well as all the rules to manage the passphrase.
+In line with security best practices, you can configure a passphrase policy for administrator users in API Gateway Manager. Passphrase policy refers to the size and complexity of the passphrase as well as all the rules to manage the passphrase for nodemanagers and groups.
 
 For more information of setting the passphrase policy for administrators users, see the [Configure a passphrase policy for admin users](https://developmar21--axway-open-docs.netlify.app/docs/apim_administration/apigtw_admin/manage_user_access/#configure-a-passphrase-policy-for-admin-users).
 
