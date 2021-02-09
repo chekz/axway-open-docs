@@ -196,7 +196,7 @@ apigateway/conf/passwordPolicy.json
 
 ## passphrasePolicy.json
 
-This file can only be be changed manually or via an API call right now. See **ENTER_LINK_TO_SWAGGER_UI_PASSPHRASE_POLICY_API_CALL.** Configures rules around passhrase requirements for nodemanagers and groups.
+This file is edited though the following API call, **ENTER_LINK_TO_SWAGGER_UI_PASSPHRASE_POLICY_API_CALL,** but it can be changed manually. There is no option to edit this through the UI right now.Configures rules around passhphrase requirements for nodemanagers and groups.
 
 ```
 apigateway/conf/passphrasePolicy.json
