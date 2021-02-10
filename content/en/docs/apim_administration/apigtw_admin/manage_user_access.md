@@ -290,4 +290,4 @@ To configure the passphrase policy that applies to admin users for nodemanager a
    ```
 2. Call the following API, ENTER_LINK_TO_SWAGGER_UI_PASSPHRASE_GET, to get the current passphrase policy configuration. It is disabled by default.
 3. Edit the configruations returned from the previous API call to meet your specifications.
-4. Call the following API, ENTER_LINK_TO_SWAGGER_UI_PASSPHRASE_PUT, and in the body of the request enter in your updated configurations. Ensure enabled is set to true at the top of the request for the passphrase policy to be activated.
+4. Call the following API, ENTER_LINK_TO_SWAGGER_UI_PASSPHRASE_PUT, and in the body of the request enter in your updated configurations. Ensure enabled is set to true at the top of the body for the passphrase policy to be activated.
