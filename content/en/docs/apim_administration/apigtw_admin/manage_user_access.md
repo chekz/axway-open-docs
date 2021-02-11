@@ -197,7 +197,7 @@ To configure the password policy that applies to admin user passwords, perform t
 
 ### Configure a passphrase policy for admin users
 
-To configure the passphrase policy that applies to nodemanager and group passphrases, perform the following steps as an API Gateway Manager administrator user:
+To configure the passphrase policy that applies to nodemanager and group passphrases, perform the following steps as an API Gateway Manager administrator:
 
 1. Call the following API to [get the current passphrase policy](http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json#!/Topology_API/get_topology_passphrasepolicy).
 2. Edit the configurations returned from the previous API call to meet your specifications.
@@ -274,7 +274,7 @@ Sample body for updating passphrase policy:
     } ]
   } ],
   "version" : 2,
-  "dataVersion" : "7.4.1",
-  "timestamp" : 3
+  "dataVersion" : "7.7.0",
+  "timestamp" : 1613035792336
 }
 ```
