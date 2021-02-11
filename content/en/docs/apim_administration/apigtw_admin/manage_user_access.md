@@ -197,97 +197,84 @@ To configure the password policy that applies to admin user passwords, perform t
 
 ### Configure a passphrase policy for admin users
 
-To configure the passphrase policy that applies to admin users for nodemanager and group passphrases, perform the following steps:
+To configure the passphrase policy that applies to nodemanager and group passphrases, perform the following steps as an API Gateway Manager administrator user:
 
-1. Backup the contents of /apigateway/conf/passphrasePolicy.json in case a mistake is made during the passphrase policy configuration. The default looks like the following.
+1. Call the following API to [get the current passphrase policy](http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json#!/Topology_API/get_topology_passphrasepolicy).
+2. Edit the configurations returned from the previous API call to meet your specifications.
+3. Paste the new configurations into the body of the following API to [update your passphrase policy](http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json#!/Topology_API/put_topology_passphrasepolicy). Ensure enabled is set to true at the top of the request to enable the passphrase policy.
 
-   ```
-   {
-       "enabled": false,
-       "assertions": [
-         {
-           "matchCount": "*",
-           "enabled": true,
-           "description": "general",
-           "assertion": [
-             {
-               "enabled": true,
-               "name": "Passphrase cannot be empty",
-               "resourceID": "PASSWORD_NOT_NULL"
-             },
-             {
-               "enabled": true,
-               "name": "Passphrase must be longer than N characters",
-               "minLength": "4",
-               "resourceID": "PASSWORD_MIN_LENGTH"
-             },
-             {
-               "enabled": true,
-               "name": "Passphrase cannot be the same as the domain/node manager/group name",
-               "resourceID": "PASSWORD_NOT_EQUAL_TO_ACC_NAME"
-             },
-             {
-               "enabled": true,
-               "name": "Passphrase cannot be the same as the reverse of domain/node manager/group name",
-               "resourceID": "PASSWORD_NOT_EQUAL_TO_REV_ACC_NAME"
-             },
-             {
-               "enabled": false,
-               "name": "Passphrase cannot contain domain/node manager/group name",
-               "resourceID": "PASSWORD_NOT_CONTAINING_ACC_NAME"
-             },
-             {
-               "enabled": false,
-               "name": "Passphrase Distance",
-               "resourceID": "PASSWORD_DISTANCE"
-             },
-             {
-               "enabled": false,
-               "name": "Passphrase Lifetime",
-               "resourceID": "PASSWORD_LIFETIME"
-             },
-             {
-               "enabled": false,
-               "name": "Passphrase not in history",
-               "resourceID": "PASSWORD_NOT_IN_HISTORY"
-             }
-           ]
-         },
-         {
-           "matchCount": "*",
-           "enabled": true,
-           "description": "composition",
-           "assertion": [
-             {
-               "enabled": true,
-               "name": "Must contain an upper case character",
-               "resourceID": "MUST_HAVE_UPPER_CASE",
-               "count": 1
-             },
-             {
-               "enabled": true,
-               "name": "Must contain an lower case character",
-               "resourceID": "MUST_HAVE_LOWER_CASE",
-               "count": 1
-             },
-             {
-               "enabled": true,
-               "name": "Must contain a number",
-               "resourceID": "MUST_CONTAIN_DIGIT",
-               "count": 1
-             },
-             {
-               "enabled": true,
-               "name": "Must contain a special character",
-               "characters": "~!@#$%^&*()-_=+\\|[{}];:'\",<.>/ ?",
-               "count": 1,
-               "resourceID": "MUST_CONTAIN_SPECIAL_CHARACTERS"
-             }
-           ]
-         }
-       ]
-   }
-   ```
-2. Call the following API, ENTER_LINK_TO_SWAGGER_UI_PASSPHRASE_GET, to get the current passphrase policy configuration. It is disabled by default.
-3. Edit the configruations returned from the previous API call to meet your specifications.
-4. Call the following API, ENTER_LINK_TO_SWAGGER_UI_PASSPHRASE_PUT, and in the body of the request enter in your updated configurations. Ensure enabled is set to true at the top of the body for the passphrase policy to be activated.
+Sample body for updating passphrase policy:
+
+```
+{
+  "enabled" : true,
+  "assertions" : [ {
+    "description" : "general",
+    "matchCount" : "*",
+    "enabled" : true,
+    "assertion" : [ {
+      "enabled" : true,
+      "resourceID" : "PASSWORD_NOT_NULL",
+      "name" : "Passphrase cannot be empty"
+    }, {
+      "enabled" : true,
+      "resourceID" : "PASSWORD_MIN_LENGTH",
+      "minLength" : "4",
+      "name" : "Passphrase must be longer than N characters"
+    }, {
+      "enabled" : true,
+      "resourceID" : "PASSWORD_NOT_EQUAL_TO_ACC_NAME",
+      "name" : "Passphrase cannot be the same as the domain/node manager/group name"
+    }, {
+      "enabled" : true,
+      "resourceID" : "PASSWORD_NOT_EQUAL_TO_REV_ACC_NAME",
+      "name" : "Passphrase cannot be the same as the reverse of domain/node manager/group name"
+    }, {
+      "enabled" : false,
+      "resourceID" : "PASSWORD_NOT_CONTAINING_ACC_NAME",
+      "name" : "Passphrase cannot contain domain/node manager/group name"
+    }, {
+      "enabled" : false,
+      "resourceID" : "PASSWORD_DISTANCE",
+      "name" : "Passphrase Distance"
+    }, {
+      "enabled" : false,
+      "resourceID" : "PASSWORD_LIFETIME",
+      "name" : "Passphrase Lifetime"
+    }, {
+      "enabled" : false,
+      "resourceID" : "PASSWORD_NOT_IN_HISTORY",
+      "name" : "Passphrase not in history"
+    } ]
+  }, {
+    "description" : "composition",
+    "matchCount" : "*",
+    "enabled" : true,
+    "assertion" : [ {
+      "enabled" : true,
+      "resourceID" : "MUST_HAVE_UPPER_CASE",
+      "name" : "Must contain an upper case character",
+      "count" : "1"
+    }, {
+      "enabled" : true,
+      "resourceID" : "MUST_HAVE_LOWER_CASE",
+      "name" : "Must contain an lower case character",
+      "count" : "1"
+    }, {
+      "enabled" : true,
+      "resourceID" : "MUST_CONTAIN_DIGIT",
+      "name" : "Must contain a number",
+      "count" : "1"
+    }, {
+      "enabled" : true,
+      "characters" : "~!@#$%^&*()-_=+\\|[{}];:'\",<.>/ ?",
+      "resourceID" : "MUST_CONTAIN_SPECIAL_CHARACTERS",
+      "name" : "Must contain a special character",
+      "count" : "1"
+    } ]
+  } ],
+  "version" : 2,
+  "dataVersion" : "7.4.1",
+  "timestamp" : 3
+}
+```
