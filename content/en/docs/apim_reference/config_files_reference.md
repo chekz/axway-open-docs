@@ -195,6 +195,14 @@ This file is edited through the UI, but it can be changed manually. Configures r
 apigateway/conf/passwordPolicy.json
 ```
 
+## passphrasePolicy.json
+
+This file is edited though an API call, but it can be changed manually. Configures rules around passphrase requirements for nodemanagers and groups.
+
+```
+apigateway/conf/passphrasePolicy.json
+```
+
 ## userconfig.dtd for Node Manager
 
 User configurations for Node Manager.

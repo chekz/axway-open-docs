@@ -76,6 +76,12 @@ For more information on setting the password policy for administrator users, see
 
 You can also configure password policies for [API Manager](/docs/apim_administration/apimgr_admin/api_mgmt_admin/#enforce-password-changes) and [API Portal](/docs/apim_administration/apiportal_admin/customize_page_content/#enforce-password-policies) users.
 
+## Passphrase policy
+
+In line with security best practices, an administrator for API Gateway Manager can configure a passphrase policy for nodemanagers and groups. Passphrase policy refers to the size and complexity of the passphrase, as well as all the rules to manage the passphrases.
+
+For more information on setting the passphrase policy for administrator users, see [Configure a passphrase policy for admin users](/docs/apim_administration/apigtw_admin/manage_user_access/#configure-a-passphrase-policy-for-admin-users).
+
 ## Default authentication account
 
 The default behavior of the software version of the product is to force you to set an administrator password during installation.
@@ -134,6 +140,16 @@ The following file contains the hashed passwords of administrator users that hav
 ```
 /conf/adminUsers.json
 ```
+
+### Nodemanager and Group passphrases
+
+The following file contains the hashed passphrases for nodemanagers and groups.
+
+```
+/conf/groupSettings.json
+```
+
+The passphrases are stored as a salted hash derived from 102400 iterations of the PBKDF2 algorithm with HmacSHA-2. Each passphrase uses a different salt so that identical passphrases result in different stored hashes.
 
 The passwords are stored as a salted hash derived from 102400 iterations of the PBKDF2 algorithm with HmacSHA-2.  Each password uses a different salt so that identical passwords result in different stored hashes.
 
