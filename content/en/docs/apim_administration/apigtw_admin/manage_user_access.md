@@ -203,7 +203,7 @@ To configure the passphrase policy that applies to nodemanager and group passphr
 2. Edit the configurations returned from the previous API call to meet your specifications.
 3. Paste the new configurations into the body of the following API to [update your passphrase policy](http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json#!/Topology_API/put_topology_passphrasepolicy). Ensure enabled is set to true at the top of the request to enable the passphrase policy.
 
-Sample body for updating passphrase policy:
+Sample body, including all available configurations, for updating passphrase policy:
 
 ```
 {
