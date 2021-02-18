@@ -196,15 +196,16 @@ To configure the password policy that applies to admin user passwords, perform t
 
 ### Configure a passphrase policy for admin users
 
-To configure the passphrase policy that applies to nodemanager and group passphrases, perform the following steps as an API Gateway Manager administrator:
+To configure the passphrase policy that applies to the node manager and group passphrases, perform the following steps as an API Gateway Manager administrator:
 
-1. Call the following API to [get the current passphrase policy](http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json#!/Topology_API/get_topology_passphrasepolicy).
-2. Edit the configurations returned from the previous API call to meet your specifications.
-3. Paste the new configurations into the body of the following API to [update your passphrase policy](http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json#!/Topology_API/put_topology_passphrasepolicy). Ensure enabled is set to true at the top of the body in the request to enable the passphrase policy.
+1. Call method `GET /topology/passphrasepolicy` of the [API Gateway API v1.0 Topology API](http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json#!/Topology_API/get_topology_passphrasepolicy) to get the current passphrase policy.
+2. Update the configurations returned from the API call to meet your specifications.
+3. Paste the new configurations into the body of the `/topology/passphrasepolicy` method, in the same [Topology API](http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json#!/Topology_API/put_topology_passphrasepolicy), to update your passphrase policy.
+4. Ensure **enabled** is set to true at the top of the body in the request to enable the passphrase policy.
 
-Sample body, including all available configurations, for updating passphrase policy:
+The following is a sample body, including all available configurations for updating the passphrase policy:
 
-```
+```json
 {
   "enabled" : true,
   "assertions" : [ {
@@ -257,7 +258,7 @@ Sample body, including all available configurations, for updating passphrase pol
     }, {
       "enabled" : true,
       "resourceID" : "MUST_HAVE_LOWER_CASE",
-      "name" : "Must contain an lower case character",
+      "name" : "Must contain a lower case character",
       "count" : "1"
     }, {
       "enabled" : true,
