@@ -204,7 +204,6 @@ API Portal forces a Joomla! administrator password change on first login.
 
 API Server Administrators can configure the following rules for Node Manager and API Gateway group passphrases:
 
-* Restrictions on using account user name in passphrase.
 * Restrictions on passphrase length.
 * Restrictions on using passphrases that are similar to passphrases used previously.
 * How long a passphrase is valid.
