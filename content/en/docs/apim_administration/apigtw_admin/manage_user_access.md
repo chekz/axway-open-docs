@@ -194,14 +194,13 @@ To configure the password policy that applies to admin user passwords, perform t
     * If no value is specified in these fields, these rules are disabled.
 5. Click **Apply** when finished.
 
-### Configure a passphrase policy for admin users
+### Configure a passphrase policy for Node Managers and API Gateway Groups
 
-To configure the passphrase policy that applies to the node manager and group passphrases, perform the following steps as an API Gateway Manager administrator:
+To configure the passphrase policy that applies to the passphrases of Node Managers and API Gateway groups perform the following steps as an API Server Administrator:
 
 1. Call method `GET /topology/passphrasepolicy` of the [API Gateway API v1.0 Topology API](http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json#!/Topology_API/get_topology_passphrasepolicy) to get the current passphrase policy.
 2. Update the configurations returned from the API call to meet your specifications.
-3. Paste the new configurations into the body of the `/topology/passphrasepolicy` method, in the same [Topology API](http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json#!/Topology_API/put_topology_passphrasepolicy), to update your passphrase policy.
-4. Ensure **enabled** is set to true at the top of the body in the request to enable the passphrase policy.
+3. Paste the new configurations into the body of the `PUT /topology/passphrasepolicy` method, in the same [Topology API](http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json#!/Topology_API/put_topology_passphrasepolicy), to update your passphrase policy.
 
 The following is a sample body, including all available configurations for updating the passphrase policy:
 
@@ -272,9 +271,6 @@ The following is a sample body, including all available configurations for updat
       "name" : "Must contain a special character",
       "count" : "1"
     } ]
-  } ],
-  "version" : 2,
-  "dataVersion" : "7.7.0",
-  "timestamp" : 1613035792336
+  } ]
 }
 ```

@@ -78,9 +78,9 @@ You can also configure password policies for [API Manager](/docs/apim_administra
 
 ## Passphrase policy
 
-In line with security best practices, an administrator for API Gateway Manager can configure a passphrase policy for nodemanagers and groups. Passphrase policy refers to the size and complexity of the passphrase, as well as all the rules to manage the passphrases.
+In line with security best practices, an API Server Administrator can configure a passphrase policy for Node Managers and API Gateway groups. Passphrase policy refers to the size and complexity of the passphrase, as well as all the rules to manage the passphrases.
 
-For more information on setting the passphrase policy for administrator users, see [Configure a passphrase policy for admin users](/docs/apim_administration/apigtw_admin/manage_user_access/#configure-a-passphrase-policy-for-admin-users).
+For more information on setting the passphrase policy, see [Configure a passphrase policy for Node Managers and API Gateway Groups](/docs/apim_administration/apigtw_admin/manage_user_access/#configure-a-passphrase-policy-for-node-managers-and-api-gateway-groups).
 
 ## Default authentication account
 
@@ -141,9 +141,9 @@ The following file contains the hashed passwords of administrator users that hav
 /conf/adminUsers.json
 ```
 
-### Nodemanager and Group passphrases
+### Node Manager and API Gateway Group passphrases
 
-The following file contains the hashed passphrases for nodemanagers and groups.
+The following file contains the hashed passphrases for Node Managers and API Gateway groups.
 
 ```
 /conf/groupSettings.json

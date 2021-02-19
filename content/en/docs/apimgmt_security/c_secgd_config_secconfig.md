@@ -200,9 +200,9 @@ You can set the administrator's password during installation.
 
 API Portal forces a Joomla! administrator password change on first login.
 
-## Nodemanager and group passphrase policy
+## Node Manager and API Gateway group passphrase policy
 
-You can configure the following rules for nodemanager and group passphrases for API Gateway administrators:
+API Server Administrators can configure the following rules for Node Manager and API Gateway group passphrases:
 
 * Restrictions on using account user name in passphrase.
 * Restrictions on passphrase length.
@@ -210,7 +210,7 @@ You can configure the following rules for nodemanager and group passphrases for 
 * How long a passphrase is valid.
 * The minimum number of uppercase, lowercase, numeric, and special characters a passphrase must contain.
 
-For more details, see [Configure a passphrase policy for admin users](/docs/apim_administration/apigtw_admin/manage_user_access/#configure-a-passphrase-policy-for-admin-users).
+For more details, see [Configure a passphrase policy for Node Managers and API Gateway Groups](/docs/apim_administration/apigtw_admin/manage_user_access/#configure-a-passphrase-policy-for-node-managers-and-api-gateway-groups).
 
 ## API Gateway signing the audit trail
 
