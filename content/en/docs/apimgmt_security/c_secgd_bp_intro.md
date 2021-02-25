@@ -141,6 +141,8 @@ The following file contains the hashed passwords of administrator users that hav
 /conf/adminUsers.json
 ```
 
+The passwords are stored as a salted hash derived from 102400 iterations of the PBKDF2 algorithm with HmacSHA-2.  Each password uses a different salt so that identical passwords result in different stored hashes.
+
 ### Node Manager and API Gateway Group passphrases
 
 The following file contains the hashed passphrases for Node Managers and API Gateway groups.
@@ -150,8 +152,6 @@ The following file contains the hashed passphrases for Node Managers and API Gat
 ```
 
 The passphrases are stored as a salted hash derived from 102400 iterations of the PBKDF2 algorithm with HmacSHA-2. Each passphrase uses a different salt so that identical passphrases result in different stored hashes.
-
-The passwords are stored as a salted hash derived from 102400 iterations of the PBKDF2 algorithm with HmacSHA-2.  Each password uses a different salt so that identical passwords result in different stored hashes.
 
 ### Key Property Store
 
