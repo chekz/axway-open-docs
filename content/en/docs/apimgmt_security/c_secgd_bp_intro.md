@@ -78,9 +78,9 @@ You can also configure password policies for [API Manager](/docs/apim_administra
 
 ## Passphrase policy
 
-In line with security best practices, an API Server Administrator can configure a passphrase policy for Node Managers and API Gateway groups. Passphrase policy refers to the size and complexity of the passphrase, as well as all the rules to manage the passphrases.
+In line with security best practices, an API Server Administrator can configure a passphrase policy for node managers and API Gateway groups. Passphrase policy refers to the size and complexity of the passphrase, as well as all the rules to manage the passphrases.
 
-For more information on setting the passphrase policy, see [Configure a passphrase policy for Node Managers and API Gateway Groups](/docs/apim_administration/apigtw_admin/manage_user_access/#configure-a-passphrase-policy-for-node-managers-and-api-gateway-groups).
+For more information on setting the passphrase policy, see [Configure a passphrase policy for node managers and API Gateway groups](/docs/apim_administration/apigtw_admin/manage_user_access/#configure-a-passphrase-policy-for-node-managers-and-api-gateway-groups).
 
 ## Default authentication account
 
@@ -148,7 +148,7 @@ The passwords are stored as a salted hash derived from 102400 iterations of the 
 The following file contains the hashed passphrases for Node Managers and API Gateway groups.
 
 ```
-/conf/groupSettings.json
+/system/conf/groupSettings.json
 ```
 
 The passphrases are stored as a salted hash derived from 102400 iterations of the PBKDF2 algorithm with HmacSHA-2. Each passphrase uses a different salt so that identical passphrases result in different stored hashes.

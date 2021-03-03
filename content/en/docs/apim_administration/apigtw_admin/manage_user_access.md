@@ -22,21 +22,10 @@ You can create gateway users on the **Users** page. Click the **Add** button on 
 
 To specify the new user details, complete the following fields on the **General** tab:
 
-**User Name**:
-
-Enter a name for the new user.
-
-**Password**:
-
-Enter a password for the new user.
-
-**Confirm Password**:
-
-Re-enter the user's password to confirm.
-
-**Signing Key**:
-
-Click to load the user certificate from the **Certificate Store**. For details on how to create and import certificates, see [Manage certificates and keys](/docs/apim_administration/apigtw_admin/general_certificates/).
+* **User Name**: Enter a name for the new user.
+* **Password**: Enter a password for the new user.
+* **Confirm Password**: Re-enter the user's password to confirm.
+* **Signing Key**: Click to load the user certificate from the **Certificate Store**. For details on how to create and import certificates, see [Manage certificates and keys](/docs/apim_administration/apigtw_admin/general_certificates/).
 
 You can also specify optional user attributes on the **Attributes** tab, which is explained in the next section.
 
@@ -194,13 +183,11 @@ To configure the password policy that applies to admin user passwords, perform t
     * If no value is specified in these fields, these rules are disabled.
 5. Click **Apply** when finished.
 
-### Configure a passphrase policy for Node Managers and API Gateway Groups
+## Configure a passphrase policy for node managers and API Gateway groups
 
-Please note that it is currently not possible to configure a passphrase policy for Node Managers and API Gateway Groups through the UI. Instead an API Server Administrator must configure the passphrase policy by calling `/topology/passphrasepolicy` API's. The product ships with the passphrase policy disabled.
+To configure a [passphrase policy](/docs/apimgmt_security/c_secgd_bp_intro/#passphrase-policy) that applies to the passphrases of node managers and API Gateway groups perform the following steps as an API Server Administrator:
 
-To configure a passphrase policy that applies to the passphrases of Node Managers and API Gateway groups perform the following steps as an API Server Administrator:
-
-1. Call method `GET /topology/passphrasepolicy` of the [API Gateway API v1.0 Topology API](http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json#!/Topology_API/get_topology_passphrasepolicy) to get the current passphrase policy.
+1. Call the `GET /topology/passphrasepolicy` method of the [API Gateway API v1.0 Topology API](http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json#!/Topology_API/get_topology_passphrasepolicy) to get the current passphrase policy. The passphrase policy is disabled by default.
 2. Update the configurations returned from the API call to meet your specifications.
 3. Paste the new configurations into the body of the `PUT /topology/passphrasepolicy` method, in the same [Topology API](http://apidocs.axway.com/swagger-ui/index.html?productname=apigateway&productversion=7.7.0&filename=api-gateway-swagger.json#!/Topology_API/put_topology_passphrasepolicy), to update your passphrase policy.
 
@@ -276,3 +263,5 @@ The following is a sample body, including all available configurations for updat
   } ]
 }
 ```
+
+{{% alert title="Note" %}}Configuring a passphrase policy is currently not possible by way of API Manager UI.{{% /alert %}}
